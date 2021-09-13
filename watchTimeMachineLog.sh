@@ -6,5 +6,5 @@ log stream --predicate 'subsystem == "com.apple.TimeMachine"' --info
 #log show --predicate 'subsystem == "com.apple.TimeMachine"' --info --last 4h
 #                                         can adjust duration to show here ^
 
-#to hide non-progress update messages, adjust the --predicate string to
+#to hide non-progress status messages, adjust the --predicate string to
 #--predicate '(subsystem == "com.apple.TimeMachine") && (category == "CopyProgress")'
