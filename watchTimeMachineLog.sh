@@ -8,7 +8,6 @@ CYAN="$(tput setaf 6)"
 WHITE="$(tput setaf 7)"
 
 
-
 if (( $# == 0 )); then
 	log stream --predicate 'subsystem == "com.apple.TimeMachine"' --info
 elif [[ $1 == *-h* ]]; then
@@ -17,11 +16,12 @@ elif [[ $1 == *-h* ]]; then
 	echo "or ${CYAN}leave duration blank${WHITE} for live data stream"
 else
 
-#to see the recent historical records, pass a time specifier
-
-log show --predicate 'subsystem == "com.apple.TimeMachine"' --info --last $1
-#               choose argument such as 4h to adjust duration to show here ^
+	#to see the recent historical records, pass a time specifier
+	log show --predicate 'subsystem == "com.apple.TimeMachine"' --info --last $1
+	#               choose argument such as 4h to adjust duration to show here ^
 fi
 
+
+#todo: handle with additional script option
 #to hide non-progress status messages, adjust the --predicate string to
 #--predicate '(subsystem == "com.apple.TimeMachine") && (category == "CopyProgress")'
